@@ -1,0 +1,127 @@
+@import "variables";
+
+@mixin img-one-hundred {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+@mixin page-init {
+	background: rgba(0, 0, 0, 0.1);
+	min-height: calc(100vh - 64px);
+	background: linear-gradient(35deg, rgb(60, 142, 250), white);
+}
+
+.nav-wrapper {
+	padding: $pagePadding;
+
+	@include img-one-hundred();
+	
+	.nav-wrapper__logo {
+		padding: 5px 0;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	a {
+		width: 64px;
+		height: 64px;
+		padding: 0;
+		margin: 0 5px;
+		.nav-wrapper__links_item_icon {
+			// padding: 5px 0;
+			object-fit: cover;
+			height: 64px;
+		}
+	}
+	
+}
+
+.main-wrapper {
+	@include page-init();
+	
+	padding: $pagePadding;
+
+	.main-wrapper__hello-user {
+		background-color: rgba(0, 0, 0, 0.15);
+		width: 60%;
+		height: 300px;
+		margin: 0 auto;
+		border-radius: 20px;
+		padding-top: 50px;
+		text-align: center;
+		color: white;
+		opacity: 0;
+		
+		animation: fade 1.5s 100ms forwards;
+		
+		@keyframes fade {
+			0% { opacity: 0; }
+			100% { 
+				opacity: 1;
+				transform: translate(0px, 60%);
+			}
+		}
+	}
+}
+
+.news-wrapper {
+	@include page-init();
+	padding: $pagePadding;
+	padding-top: 15px;
+
+	.news-wrapper__list {
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-between;
+
+		.news-wrapper__list_block {
+			width: 48%;
+			margin: 10px 0;
+			min-height: 100px;
+			background-color: rgba(255, 255, 255, 0.7);
+			padding: 15px;
+			border-radius: 20px;
+			
+
+			h3 {
+				margin: 0;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.add-post {
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 20px;
+	
+	.add-post__form {
+		.add-post__form_wrapper {
+			display: flex;
+			flex-direction: column;
+
+			label {
+				color: black;
+				font-weight: 600;
+				font-size: 1rem;
+			}
+			input {
+				&:focus {
+					border-color: blue;
+					box-shadow: 0 1px 0 0 lightblue;
+				}
+			}
+			.add-post__form_wrapper_title-input {
+				width: 50%;
+			}
+
+			.add-post__form_wrapper_text-input {
+				width: 80%;
+			}
+		}
+		.add-post__form_submit-input {
+			color: black;
+		}
+	}
+}
