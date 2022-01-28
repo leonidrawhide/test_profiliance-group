@@ -1,10 +1,16 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment } from '../features/counter/counterSlice'
 
 export default function AddPost() {
+	const posts = useSelector((state) => state.arrayOfPosts.post)
+  	const dispatch = useDispatch()
+
+	console.log(posts)
 	return <div className='add-post'>
 		<form className='add-post__form'>
 			<div className='add-post__form_wrapper'>
-				<label for="add-title">Заголовок</label>
+				<label htmlFor="add-title">Заголовок</label>
 				<input 
 					type="text"
 					name="title"
@@ -14,7 +20,7 @@ export default function AddPost() {
 				/>
 			</div>
 			<div className='add-post__form_wrapper'>
-				<label for="add-text">Текст новости</label>
+				<label htmlFor="add-text">Текст новости</label>
 				<input
 					type="text"
 					name="text"
@@ -28,6 +34,7 @@ export default function AddPost() {
 				type="submit"
 				value="Запостить" 
 				className='add-post__form_submit-input waves-effect waves-light btn-large red lighten-5'
+				onClick={() => dispatch(increment())}
 				/>
 		</form>
 	</div>;
