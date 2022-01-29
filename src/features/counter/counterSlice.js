@@ -16,7 +16,14 @@ export const counterSlice = createSlice({
 			text: 'Это второй пост в новостном блоке',
 			date: '28.01.2022'
 		}
-  	]
+  	],
+	users: [
+		{
+			login: 'test-user',
+			email: 'test@mail.ru',
+			password: 'qwerty123'
+		}
+	]
   },
   reducers: {
     increment: (state) => {

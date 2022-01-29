@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import logo from '../img/logo.svg';
 import userIcon from '../img/user-icon.png';
 import newsIcon from '../img/news-icon.png';
 import './styles/style.css';
+import ModalLogin from './ModalLogin';
 
 export default function Navbar() {
+	const [loginActive, setLoginActive] = useState(false);
+	console.log("initial value = " + loginActive)
+
 	return <div>
+		<ModalLogin active={loginActive} setActive={setLoginActive} />
 		<nav className="nav-wrapper red lighten-5">
 			<Link to={'/'} >
 				<img className="nav-wrapper__logo" src={logo} alt="logo" />
@@ -21,12 +26,13 @@ export default function Navbar() {
 					</Link>
 				</li>
 				<li className="nav-wrapper__links_item">
-					<Link to={'/'} >
+					<button  onClick={() => setLoginActive(true)}>
 					<img className="nav-wrapper__links_item_icon" src={userIcon} alt="login link" />
-					</Link>
+					</button>
 				</li>
 			</ul>
 		</nav>
+
 		<Outlet />
 	</div>
 		
