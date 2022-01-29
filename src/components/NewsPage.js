@@ -7,11 +7,9 @@ import initialState from '../app/reducers'
 export default function NewsPage() {
 	// const posts = [{title: 'lol', text: 'olo', date: '34'}]
 	const posts = useSelector((state) => state.post)
-	let demoDate = new Date();
 
   	return <div className='news-wrapper'>
 		<AddPost />
-		
 	  	<div className='news-wrapper__list'>
 		  	{posts.map((post, index) => (
 				<div className='news-wrapper__list_block'>

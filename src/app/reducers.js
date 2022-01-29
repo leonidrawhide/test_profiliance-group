@@ -86,8 +86,8 @@ export const reducer = (state = initialState, action) => {
 				return state
 			}
 		case 'LOGOUT':
-			state.loginStatus = false
-			return state
+			// state.loginStatus = false
+			return {...state, loginStatus: false}
         case 'ADD_POST':
             return {...state, post: [...state.post, action.data]}
         default:

@@ -11,8 +11,18 @@
 	background: linear-gradient(35deg, rgb(60, 142, 250), white);
 }
 
+.nav {
+	width: 100vw;;
+}
+
 .nav-wrapper {
-	padding: $pagePadding;
+	width: 1000px;
+	margin: 0 auto;
+	border: none;
+	box-shadow: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
 	@include img-one-hundred();
 	
@@ -21,6 +31,12 @@
 		height: 100%;
 		object-fit: cover;
 	}
+
+	// .nav-wrapper__logo-alt {
+	// 	padding: 5px 0;
+	// 	height: 100%;
+	// 	object-fit: cover;
+	// }
 
 	a {
 		width: 64px;
@@ -57,16 +73,18 @@
 		height: 64px;
 	}
 	
+	
 }
 
 .main-wrapper {
 	@include page-init();
 	
-	padding: $pagePadding;
+	width: 100vw;
+	padding: 0 15px;
 
 	.main-wrapper__hello-user {
 		background-color: rgba(0, 0, 0, 0.15);
-		width: 60%;
+		max-width: 800px;
 		height: 300px;
 		margin: 0 auto;
 		border-radius: 20px;
@@ -89,22 +107,25 @@
 
 .news-wrapper {
 	@include page-init();
-	padding: $pagePadding;
+	width: 100vw;
 	padding-top: 15px;
 
 	.news-wrapper__list {
 		display: flex;
 		flex-flow: wrap;
 		justify-content: space-between;
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 15px;
 
 		.news-wrapper__list_block {
 			width: 48%;
+			min-width: 350px;
 			margin: 10px 0;
 			min-height: 100px;
 			background-color: rgba(255, 255, 255, 0.7);
 			padding: 15px;
 			border-radius: 20px;
-			
 
 			h3 {
 				margin: 0;
@@ -115,6 +136,8 @@
 }
 
 .add-post {
+	max-width: 1000px;
+	margin: 0 auto;
 	padding: 15px;
 	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 20px;
@@ -194,5 +217,35 @@
 				color: black;
 			}
 		}
+	}
+}
+
+// @media screen and (min-width: 426px) {
+// 	.nav-wrapper__logo {
+// 		opacity: 1;
+// 		pointer-events: all;
+// 	}
+
+// 	.nav-wrapper__logo-alt {
+// 		opacity: 0;
+// 		pointer-events: none;
+// 	}
+// }
+// @media screen and (max-width: 425px) {
+// 	.nav-wrapper__logo {
+// 		opacity: 0;
+// 		pointer-events: none;
+// 	}
+
+// 	.nav-wrapper__logo-alt {
+// 		opacity: 1;
+// 		pointer-events: all;
+// 	}
+// }
+
+
+@media only screen and (min-width: 0) {
+	.nav-wrapper {
+		height: 64px;
 	}
 }
