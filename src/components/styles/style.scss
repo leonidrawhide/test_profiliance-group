@@ -147,6 +147,9 @@
 			color: black;
 		}
 	}
+	&.dont-show {
+		display: none;
+	}
 }
 
 .modal-login {
@@ -170,6 +173,7 @@
 	}
 
 	.modal-login__content {
+		vertical-align: middle;
 		padding: 20px;
 		border-radius: 12px;
 		background-color: white;
@@ -178,6 +182,7 @@
 
 		.modal-login__content_form {
 			text-align: center;
+	
 			input {
 				&:focus {
 					border-color: blue;

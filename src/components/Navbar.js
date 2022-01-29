@@ -8,7 +8,6 @@ import ModalLogin from './ModalLogin';
 
 export default function Navbar() {
 	const [loginActive, setLoginActive] = useState(false);
-	console.log("initial value = " + loginActive)
 
 	return <div>
 		<ModalLogin active={loginActive} setActive={setLoginActive} />
