@@ -31,9 +31,26 @@
 			// padding: 5px 0;
 			object-fit: cover;
 			height: 64px;
+
+			&:hover {
+				background: rgba(0, 0, 0, 0.2);
+				transition: background-color .3s;
+			}
+		}
+		
+	}
+	button {
+		border: none;
+		line-height: 1;
+		padding: 0;
+		background: none;
+
+		&:hover {
+			cursor: pointer;
+			background: rgba(0, 0, 0, 0.2);
+			transition: background-color .3s;
 		}
 	}
-
 	.nav-wrapper__links_item_icon {
 		// padding: 5px 0;
 		object-fit: cover;

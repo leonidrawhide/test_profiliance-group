@@ -24,6 +24,26 @@
   height: 64px;
 }
 
+.nav-wrapper a .nav-wrapper__links_item_icon:hover {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+.nav-wrapper button {
+  border: none;
+  line-height: 1;
+  padding: 0;
+  background: none;
+}
+
+.nav-wrapper button:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
 .nav-wrapper .nav-wrapper__links_item_icon {
   -o-object-fit: cover;
      object-fit: cover;
