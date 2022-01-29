@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/test_profiliance-group/static/css/main.740d2fa1.css",
-    "main.js": "/test_profiliance-group/static/js/main.7fa5a036.js",
+    "main.css": "/test_profiliance-group/static/css/main.9567e55e.css",
+    "main.js": "/test_profiliance-group/static/js/main.bb8f4381.js",
     "static/js/787.0b8af635.chunk.js": "/test_profiliance-group/static/js/787.0b8af635.chunk.js",
     "static/media/logo.svg": "/test_profiliance-group/static/media/logo.30c2329ae7bda22d4695085750d37502.svg",
+    "static/media/logo-cropped.svg": "/test_profiliance-group/static/media/logo-cropped.e0f64f8f1bf5166d0bd907f93f0646aa.svg",
     "index.html": "/test_profiliance-group/index.html",
-    "main.740d2fa1.css.map": "/test_profiliance-group/static/css/main.740d2fa1.css.map",
-    "main.7fa5a036.js.map": "/test_profiliance-group/static/js/main.7fa5a036.js.map",
+    "main.9567e55e.css.map": "/test_profiliance-group/static/css/main.9567e55e.css.map",
+    "main.bb8f4381.js.map": "/test_profiliance-group/static/js/main.bb8f4381.js.map",
     "787.0b8af635.chunk.js.map": "/test_profiliance-group/static/js/787.0b8af635.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.740d2fa1.css",
-    "static/js/main.7fa5a036.js"
+    "static/css/main.9567e55e.css",
+    "static/js/main.bb8f4381.js"
   ]
 }
