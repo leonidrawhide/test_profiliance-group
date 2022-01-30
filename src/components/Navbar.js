@@ -15,7 +15,8 @@ export default function Navbar() {
 		<ModalLogin active={loginActive} setActive={setLoginActive} />
 		<nav className="nav-wrapper red lighten-5">
 			<Link to={'/'} >
-				<img className="nav-wrapper__logo" src={webLogo} alt="logo" />
+				<img className="nav-wrapper__logo" src={logo} alt="logo" />
+				<img className="nav-wrapper__logo-alt" src={logoCropped} alt="logo" />
 			</Link>
 			<ul 
 				className="nav-wrapper__links " 

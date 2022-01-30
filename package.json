@@ -1,6 +1,6 @@
 {
   "name": "test-profiliance-group",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "homepage": "https://leonidrawhide.github.io/test_profiliance-group",
   "private": true,
   "dependencies": {

@@ -27,6 +27,26 @@
      object-fit: cover;
 }
 
+@media (max-width: 425px) {
+  .nav-wrapper .nav-wrapper__logo {
+    display: none;
+  }
+}
+
+.nav-wrapper .nav-wrapper__logo-alt {
+  display: none;
+  padding: 5px 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 425px) {
+  .nav-wrapper .nav-wrapper__logo-alt {
+    display: block;
+  }
+}
+
 .nav-wrapper a {
   width: 64px;
   height: 64px;

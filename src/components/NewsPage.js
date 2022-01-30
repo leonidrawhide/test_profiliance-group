@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import AddPost from './AddPost';
-import initialState from '../app/reducers'
 
 
 export default function NewsPage() {
-	// const posts = [{title: 'lol', text: 'olo', date: '34'}]
 	const posts = useSelector((state) => state.post)
 
   	return <div className='news-wrapper'>
