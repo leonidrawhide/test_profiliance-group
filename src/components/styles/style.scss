@@ -240,12 +240,16 @@
 			.modal-login__content_form_error {
 				color: red;
 				font-size: 0.8em;
+
+				&.invisible {
+					display: none;
+				}
 			}
 
 			button {
 				color: black;
 			}
-
+			
 		}
 	}
 }

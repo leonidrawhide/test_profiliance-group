@@ -22,7 +22,8 @@ const initialState = {
 		}
 	],
 	loginStatus: false,
-	loginPopup: false
+	loginPopup: false,
+	loginAttempts: 0
 }
 
 export const reducer = (state = initialState, action) => {
@@ -37,11 +38,10 @@ export const reducer = (state = initialState, action) => {
 				return {...state, loginStatus: true, loginPopup: false}
 			} else {
 				console.log('unsucessful login...')
-				return state
+				return {...state, loginAttempts: (state.loginAttempts + 1)}
 			}
 		case 'LOGOUT':
-			// state.loginStatus = false
-			return {...state, loginStatus: false}
+			return {...state, loginStatus: false, loginAttempts: 0}
         case 'ADD_POST':
             return {...state, post: [...state.post, action.data]}
 		case 'CHANGE_POPUP_VALUE':

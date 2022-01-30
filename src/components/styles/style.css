@@ -284,6 +284,10 @@
   font-size: 0.8em;
 }
 
+.modal-login .modal-login__content .modal-login__content_form .modal-login__content_form_error.invisible {
+  display: none;
+}
+
 .modal-login .modal-login__content .modal-login__content_form button {
   color: black;
 }

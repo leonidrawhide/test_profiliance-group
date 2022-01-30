@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import store from '../app/store';
 
 export default function ModalLogin() {
   	const dispatch = useDispatch();
@@ -8,6 +7,8 @@ export default function ModalLogin() {
 	const [password, setPassword] = useState('');
 	const loginStatus = useSelector((state) => state.loginStatus)
 	const loginPopup = useSelector((state) => state.loginPopup);
+	const loginAttempts = useSelector((state) => state.loginAttempts); 
+	let errorClass = 'modal-login__content_form_error invisible'
 
 	const loginAction = (e) => {
 		e.preventDefault()
@@ -16,7 +17,7 @@ export default function ModalLogin() {
 			password: password,
 		}
 		dispatch({type: 'LOGIN', data})
-		if (loginStatus === true) loginPopupAction(e)
+		errorClass = 'modal-login__content_form_error'
 	}
 
 	const loginPopupAction = (e) => {
@@ -25,26 +26,17 @@ export default function ModalLogin() {
 		dispatch({type: 'CHANGE_POPUP_VALUE', loginPopupData})
 	}
 
-	const popupAutoClose = () => {
-		console.log("we are thinking " + loginStatus)
-		if (loginStatus === false) loginPopupAction()
-	}
-	
-
 	const logoutAction = (e) => {
 		e.preventDefault()
 		const data = {
 			login: login,
 			password: password,
 		}
+		errorClass = 'modal-login__content_form_error invisible'
 		dispatch({type: 'LOGOUT', data})
 		loginPopupAction(e)
 	}
-
-	// const checkLoginStatus = () => {
-	// 	if (loginStatus) props.setActive(false)
-	// }
-
+	console.log(loginAttempts)
 	if (!loginStatus) {
 		return <div 
 			className={loginPopup ? 'modal-login active' : 'modal-login'} 
@@ -69,7 +61,7 @@ export default function ModalLogin() {
 						placeholder='Пароль' 
 						onChange={e=>setPassword(e.target.value)}
 						/>
-					<div class='modal-login__content_form_error'>Введены неверные данные, попробуйте еще раз</div>
+					<div class={loginAttempts > 0 ? 'modal-login__content_form_error' : 'modal-login__content_form_error invisible'}>Введены неверные данные, попробуйте еще раз</div>
 					<button 
 						className='waves-effect waves-light btn red lighten-5' 
 						onClick={loginAction} 
@@ -92,5 +84,4 @@ export default function ModalLogin() {
 			</div>
 		</div>;
 	}
-  	
 }
