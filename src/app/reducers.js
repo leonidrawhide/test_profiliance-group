@@ -15,9 +15,9 @@ const initialState = {
   	],
 	users: [
 		{
-			login: 'test-user',
+			login: 'test',
 			email: 'test@mail.ru',
-			password: 'qwerty123',
+			password: 'qwe',
 			loginAttempts: 0
 		}
 	],
@@ -43,7 +43,7 @@ export const reducer = (state = initialState, action) => {
 		case 'LOGOUT':
 			return {...state, loginStatus: false, loginAttempts: 0}
         case 'ADD_POST':
-            return {...state, post: [...state.post, action.data]}
+            return {...state, post: [action.data, ...state.post]}
 		case 'CHANGE_POPUP_VALUE':
 			return {...state, loginPopup: !(state.loginPopup)}
         default:
