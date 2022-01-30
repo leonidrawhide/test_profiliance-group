@@ -1,51 +1,3 @@
-// import { createSlice } from '@reduxjs/toolkit'
-
-// export const counterSlice = createSlice({
-//   name: 'posts',
-//   initialState: {
-//     post: [
-// 		{
-// 			id: 1,
-// 			title: 'Первый пост',
-// 			text: 'Это первый пост в новостном блоке',
-// 			date: '01.01.1970'	
-// 		},
-// 		{
-// 			id: 2,
-// 			title: 'Второй пост',
-// 			text: 'Это второй пост в новостном блоке',
-// 			date: '28.01.2022'
-// 		}
-//   	],
-// 	users: [
-// 		{
-// 			login: 'test-user',
-// 			email: 'test@mail.ru',
-// 			password: 'qwerty123'
-// 		}
-// 	],
-// 	loginStatus: false
-//   },
-//   reducers: {
-//     increment: (state) => {
-//       state.post.push({
-// 		  id: state.post.length + 1,
-// 		  title: 'third',
-// 		  text: 'text',
-// 		  date: '30.02.1230'
-// 		})
-//     },
-//     login: (state) => {
-// 		console.log(login)
-// 	}
-//   },
-// })
-
-// // Action creators are generated for each case reducer function
-// export const { increment, login } = counterSlice.actions
-
-// export default counterSlice.reducer
-
 const initialState = {
     post: [
 		{
@@ -65,10 +17,12 @@ const initialState = {
 		{
 			login: 'test-user',
 			email: 'test@mail.ru',
-			password: 'qwerty123'
+			password: 'qwerty123',
+			loginAttempts: 0
 		}
 	],
-	loginStatus: false
+	loginStatus: false,
+	loginPopup: false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -80,7 +34,7 @@ export const reducer = (state = initialState, action) => {
 				action.data.password == state.users.map(userInfo => userInfo.password)
 			) {
 				console.log('sucessful login!')
-				return {...state, loginStatus: true}
+				return {...state, loginStatus: true, loginPopup: false}
 			} else {
 				console.log('unsucessful login...')
 				return state
@@ -90,6 +44,8 @@ export const reducer = (state = initialState, action) => {
 			return {...state, loginStatus: false}
         case 'ADD_POST':
             return {...state, post: [...state.post, action.data]}
+		case 'CHANGE_POPUP_VALUE':
+			return {...state, loginPopup: !(state.loginPopup)}
         default:
             return state
     }

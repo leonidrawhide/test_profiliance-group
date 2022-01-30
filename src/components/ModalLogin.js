@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import store from '../app/store';
 
-export default function ModalLogin(props) {
+export default function ModalLogin() {
   	const dispatch = useDispatch();
 	const [login, setLogin] = useState('');
 	const [password, setPassword] = useState('');
 	const loginStatus = useSelector((state) => state.loginStatus)
+	const loginPopup = useSelector((state) => state.loginPopup);
 
 	const loginAction = (e) => {
 		e.preventDefault()
@@ -14,8 +16,20 @@ export default function ModalLogin(props) {
 			password: password,
 		}
 		dispatch({type: 'LOGIN', data})
-		props.setActive(false)
+		if (loginStatus === true) loginPopupAction(e)
 	}
+
+	const loginPopupAction = (e) => {
+		e.preventDefault()
+		const loginPopupData = loginPopup
+		dispatch({type: 'CHANGE_POPUP_VALUE', loginPopupData})
+	}
+
+	const popupAutoClose = () => {
+		console.log("we are thinking " + loginStatus)
+		if (loginStatus === false) loginPopupAction()
+	}
+	
 
 	const logoutAction = (e) => {
 		e.preventDefault()
@@ -24,13 +38,17 @@ export default function ModalLogin(props) {
 			password: password,
 		}
 		dispatch({type: 'LOGOUT', data})
-		props.setActive(false)
-
+		loginPopupAction(e)
 	}
+
+	// const checkLoginStatus = () => {
+	// 	if (loginStatus) props.setActive(false)
+	// }
+
 	if (!loginStatus) {
 		return <div 
-			className={props.active ? 'modal-login active' : 'modal-login'} 
-			onClick={() => props.setActive(false)}
+			className={loginPopup ? 'modal-login active' : 'modal-login'} 
+			onClick={loginPopupAction}
 			>
 			<div 
 				className='modal-login__content' 
@@ -40,7 +58,7 @@ export default function ModalLogin(props) {
 					<input 
 						type="text" 
 						value={login} 
-						name="logiin" 
+						name="login" 
 						placeholder='Логин / почта' 
 						onChange={e=>setLogin(e.target.value)}
 					/>
@@ -51,14 +69,18 @@ export default function ModalLogin(props) {
 						placeholder='Пароль' 
 						onChange={e=>setPassword(e.target.value)}
 						/>
-					<button className='waves-effect waves-light btn red lighten-5' onClick={loginAction}>Войти</button>
+					<div class='modal-login__content_form_error'>Введены неверные данные, попробуйте еще раз</div>
+					<button 
+						className='waves-effect waves-light btn red lighten-5' 
+						onClick={loginAction} 
+					>Войти</button>
 				</form>
 			</div>
 		</div>;
 	} else {
 		return <div 
-			className={props.active ? 'modal-login active' : 'modal-login'} 
-			onClick={() => props.setActive(false)}
+			className={loginPopup ? 'modal-login active' : 'modal-login'} 
+			onClick={loginPopupAction}
 		>
 			<div 
 				className='modal-login__content' 
