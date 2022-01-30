@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../app/reducers';
 
 export default function ModalLogin(props) {
   	const dispatch = useDispatch();
 	const [login, setLogin] = useState('');
 	const [password, setPassword] = useState('');
 	const loginStatus = useSelector((state) => state.loginStatus)
-	
 
 	const loginAction = (e) => {
 		e.preventDefault()
-		console.log('trying to log in')
 		const data = {
 			login: login,
 			password: password,
@@ -19,9 +16,9 @@ export default function ModalLogin(props) {
 		dispatch({type: 'LOGIN', data})
 		props.setActive(false)
 	}
+
 	const logoutAction = (e) => {
 		e.preventDefault()
-		console.log('trying to log in')
 		const data = {
 			login: login,
 			password: password,
