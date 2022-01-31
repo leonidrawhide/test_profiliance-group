@@ -19,8 +19,15 @@ const initialState = {
 			email: 'test@mail.ru',
 			password: 'qwe',
 			loginAttempts: 0
+		},
+		{
+			login: 'user',
+			email: 'user@mail.ru',
+			password: '123',
+			loginAttempts: 0
 		}
 	],
+	nameOfUser: 'Гость',
 	loginStatus: false,
 	loginPopup: false,
 	loginAttempts: 0
@@ -29,19 +36,20 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LOGIN':
-			if (
-				(action.data.login == state.users.map(userInfo => userInfo.login) || 
-				action.data.login == state.users.map(userInfo => userInfo.email)) && 
-				action.data.password == state.users.map(userInfo => userInfo.password)
-			) {
-				console.log('sucessful login!')
-				return {...state, loginStatus: true, loginPopup: false}
+			let userIndex = null
+			for (let i = 0; i < state.users.length; i++) {
+				if (action.data.login == state.users[i].login || action.data.login == state.users[i].email) userIndex = i
+			}
+			if (userIndex != null && state.users[userIndex].password == action.data.password)
+			{
+				console.log('successful login!')
+				return {...state, loginStatus: true, loginPopup: false, nameOfUser: action.data.login}
 			} else {
-				console.log('unsucessful login...')
+				console.log('unsuсcessful login...')
 				return {...state, loginAttempts: (state.loginAttempts + 1)}
 			}
 		case 'LOGOUT':
-			return {...state, loginStatus: false, loginAttempts: 0}
+			return {...state, loginStatus: false, loginAttempts: 0, nameOfUser: 'Гость'}
         case 'ADD_POST':
             return {...state, post: [action.data, ...state.post]}
 		case 'CHANGE_POPUP_VALUE':
