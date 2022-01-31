@@ -10,7 +10,7 @@ export default function NewsPage() {
 		<AddPost />
 	  	<div className='news-wrapper__list'>
 		  	{posts.map((post, index) => (
-				<div className='news-wrapper__list_block'>
+				<div className='news-wrapper__list_block' key={post.id}>
 					<h3 className='news-wrapper__list_block_title'>{post.title}</h3>
 					<p className='news-wrapper__list_block_text'>{post.text}</p>
 					<span className='news-wrapper__list_block_date-created'>{post.date}</span>

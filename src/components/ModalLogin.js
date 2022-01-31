@@ -36,7 +36,7 @@ export default function ModalLogin() {
 		dispatch({type: 'LOGOUT', data})
 		loginPopupAction(e)
 	}
-	console.log(loginAttempts)
+
 	if (!loginStatus) {
 		return <div 
 			className={loginPopup ? 'modal-login active' : 'modal-login'} 
@@ -52,6 +52,7 @@ export default function ModalLogin() {
 						value={login} 
 						name="login" 
 						placeholder='Логин / почта' 
+						autoComplete="on"
 						onChange={e=>setLogin(e.target.value)}
 					/>
 					<input 
@@ -59,9 +60,10 @@ export default function ModalLogin() {
 						value={password} 
 						name="password" 
 						placeholder='Пароль' 
+						autoComplete="on"
 						onChange={e=>setPassword(e.target.value)}
 						/>
-					<div class={loginAttempts > 0 ? 'modal-login__content_form_error' : 'modal-login__content_form_error invisible'}>Введены неверные данные, попробуйте еще раз</div>
+					<div className={loginAttempts > 0 ? 'modal-login__content_form_error' : 'modal-login__content_form_error invisible'}>Введены неверные данные, попробуйте еще раз</div>
 					<button 
 						className='waves-effect waves-light btn red lighten-5' 
 						onClick={loginAction} 

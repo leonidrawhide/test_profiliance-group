@@ -10,11 +10,10 @@ export default function AddPost(active, setActive) {
 
 	const postAction = (e) => {
 		e.preventDefault()
-		console.log('trying to make a post...')
 		const date = new Date()
 		const currentDate = `${date.getHours()}:${date.getMinutes() < 10 ? '0' : ''}${date.getMinutes()} ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
 		const data = {
-			id: posts.length,
+			id: posts.length + 1,
 			title: title,
 			text: text,
 			date: currentDate
