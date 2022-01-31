@@ -149,13 +149,13 @@
           justify-content: space-between;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 15px 20px;
 }
 
 .news-wrapper .news-wrapper__list .news-wrapper__list_block {
   width: 48%;
   min-width: 350px;
-  margin: 10px auto;
+  margin-top: 10px;
   min-height: 100px;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 15px;
