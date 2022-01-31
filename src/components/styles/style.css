@@ -92,13 +92,22 @@
   background: linear-gradient(35deg, #3c8efa, white);
   width: 100vw;
   padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-wrapper .main-wrapper__hello-user {
   background-color: rgba(0, 0, 0, 0.15);
-  max-width: 800px;
+  width: 800px;
+  min-width: 0px;
   height: 300px;
-  margin: 0 auto;
   border-radius: 20px;
   padding-top: 50px;
   text-align: center;
@@ -114,8 +123,6 @@
   }
   100% {
     opacity: 1;
-    -webkit-transform: translate(0px, 60%);
-            transform: translate(0px, 60%);
   }
 }
 
@@ -125,8 +132,6 @@
   }
   100% {
     opacity: 1;
-    -webkit-transform: translate(0px, 60%);
-            transform: translate(0px, 60%);
   }
 }
 
