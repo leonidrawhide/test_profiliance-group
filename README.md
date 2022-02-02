@@ -1,4 +1,4 @@
-# TNews Appication
+# News Appication
 ## Test task for Profiliance group
 
 [Условия задания](https://github.com/srclab/frontend-test-task/blob/main/README.md)
