@@ -11,8 +11,6 @@ Desktop screenshots:
 
 ![Main page](https://i.ibb.co/cTTQHSW/news1.png "Main page")
 
-![News page](https://i.ibb.co/0BP1Jsw/news2.png "News page")
-
 ![Login Popup](https://i.ibb.co/4MTvdKr/news3.png "Login Popup")
 
 ![News page with admin panel](https://i.ibb.co/f2sBf0Y/news4.png "News page with admin panel")
