@@ -13,8 +13,6 @@ Desktop screenshots:
 
 ![Login Popup](https://i.ibb.co/4MTvdKr/news3.png "Login Popup")
 
-![News page with admin panel](https://i.ibb.co/f2sBf0Y/news4.png "News page with admin panel")
-
 Mobile screenshots:
 
 ![Mobile main page](https://i.ibb.co/TbZWMjq/news-mobile1.png "Mobile main page")
