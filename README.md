@@ -5,6 +5,14 @@
 
 Использовано: React, Redux, SCSS
 
+Первый пользователь
+Логин: test
+Пароль: qwe
+
+Второй пользователь
+Логин: user
+Пароль: 123
+
 [This project is hosted on GitHub Pages.](https://leonidrawhide.github.io/test_profiliance-group/#/)
 
 Desktop screenshots:
